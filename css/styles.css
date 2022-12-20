@@ -100,6 +100,14 @@ body {
     place-items: center;
 }
 
+@media (max-width: 480px) {
+    .button--encrypt,
+    .button--decrypt {
+    width: 90%;
+    grid-template-columns: 20% 80%;
+}
+}
+
 .button--encrypt {
     background-color: var(--consolebackground--color);
 }
@@ -131,7 +139,7 @@ body {
 .encripted__containter {
     background-color: var(--consolebackground--color);
     padding: 1rem;
-    height: 40rem;
+    height: auto;
     border-radius: 8px;
     font-size: 2rem;
     margin: auto;
@@ -141,6 +149,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 3rem 0;
 
 }
 
