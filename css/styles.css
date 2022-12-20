@@ -1,0 +1,99 @@
+:root {
+    --console--color: #12C258;
+    --comand--color: #E37BD9;
+    --error--color: #DA2700;
+    --background--color: #201F1E;
+    --text--color: #EFEFEF;
+    --message--color: #518BFC;
+}
+
+@font-face {
+    font-family: titles;
+    src: url(fonts/nintendo-ds-bios.ttf);
+}
+@font-face {
+    font-family: primary;
+    src: url(fonts/advanced-pixel-7.ttf);
+}
+body {
+    color: var(--text--color);
+    background-color: var(--background--color);
+    font-family: primary;
+}
+.title {
+    font-family: primary;
+    font-size: 4rem;
+    color: var(--console--color);
+}
+
+.title span {
+    color: var(--error--color);
+}
+/*  body */
+.flex {
+    width: 100%;
+    margin: 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6%;
+
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 60%;
+    margin: 1rem;
+    justify-content: center;
+}
+/* [1]flex-grow Property / [1]flex-shrink Property / [60%]flex-basis Property
+[1] Crecera 1 graccion de su tamaño [1] se encojera 1 fraccieon de su tamaño / [60%]Longitud inicial del item flexible*/
+
+.instructions {
+    color: #518BFC;
+    font-size: 2rem;
+}
+.instructions span {
+    color: var(--comand--color);
+    font-size: 2rem;
+}
+.text {
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: auto;
+    border: 1px solid var(--console--color);
+    color: var(--text--color);
+    background-color: transparent;
+    caret-color: var(--console--color);
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.warning {
+    color: var(--comand--color);
+    font-size: 2rem;
+}
+
+.encripted {
+    flex: 1 1 30%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.encripted__containter {
+    background-color: var(--console--color);
+    width: 90%;
+    padding: 1rem;
+    height: 15rem;
+    border-radius: 8px;
+    font-size: 2rem;
+}
+
+/* 
+Para el texto:
+https://css-tricks.com/almanac/properties/c/caret-shape/ 
+*/
