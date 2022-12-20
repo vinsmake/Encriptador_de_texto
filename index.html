@@ -18,9 +18,29 @@
         <textarea class="text" autofocus name="text" id="text"
             placeholder="juro solemnemente que mis intenciones no son buenas"></textarea>
         <p class="warning"><img class="warning" src="src/excalamation.svg"> Solo letras minúsculas y sin acentos</p>
+        <div class="buttons">
+            <button class="button--encrypt" type="button"><span>></span>Encriptar</button>
+            <button class="button--decrypt" type="button"><span>></span>desencriptar</button>
+
+        </div>
     </section>
     <section class="encripted"> <!-- Right -->
-        <div class="encripted__containter">Hola</div>
+        <div class="encripted__containter">
+            <div class="non__resolved" id="nonResolved">
+                <div class="non__resolved--image">
+                    <img class="non__resolved--image--src" src="src/duck.png" alt="">
+                </div>
+                <div class="encripted__info">
+                <p class="non__resolved--title"><span>>ERROR:</span> Ningún mensaje fue encontrado</p>
+                <p class="non__resolved--message"><span>>USER:</span> Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+            </div>
+        
+            <div class="contenido_resuelto" id="resuelto">
+                <textarea name="texto_resultado" id="textoResultado" disabled></textarea>
+                <button id="copiar" type="button"><img src="./imagenes/copia.svg"> Copiar</button>
+            </div>
+        </div>
     </section>
 </section>
 </body>
