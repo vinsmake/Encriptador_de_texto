@@ -64,7 +64,7 @@ body {
     resize: none;
     outline: none;
     overflow: auto;
-    border: 1px solid var(--console--color);
+/*     border: 1px solid var(--console--color); */
     color: var(--console--color);
     background-color: transparent;
     caret-color: var(--console--color);
@@ -143,6 +143,10 @@ body {
     border-radius: 8px;
     font-size: 2rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
 
 .non__resolved {
@@ -150,7 +154,6 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 3rem 0;
-
 }
 
 .non__resolved--image {
@@ -203,6 +206,43 @@ body {
     font-size: 2rem;
 }
 }
+
+.button--copy {
+    visibility: hidden;
+    width: 80%;
+    padding: 0rem;
+    font-size: 2rem;
+    border: 2px inset black;
+    color: var(--text--color);
+    background-color: var(--message--color);
+    display: grid;
+    place-items: center;
+}
+
+.resolved {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    grid: 85% 15% / 1fr;
+}
+
+.response {
+    height: 85%;
+    width: 90%;
+    margin: auto;
+    resize: none;
+    border: none;
+    color: var(--text--color);
+    background-color: transparent;
+    text-align: left;
+}
+
+
 /* 
 Para el texto:
 https://css-tricks.com/almanac/properties/c/caret-shape/ 

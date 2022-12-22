@@ -19,8 +19,8 @@
             placeholder="juro solemnemente que mis intenciones no son buenas"></textarea>
         <p class="warning"><img class="warning" src="src/excalamation.svg"> Solo letras minúsculas y sin acentos</p>
         <div class="buttons">
-            <button class="button--encrypt" type="button"><span>></span>Encriptar</button>
-            <button class="button--decrypt" type="button"><span>></span>desencriptar</button>
+            <button class="button--encrypt" type="button" id="button--encrypt"><span>></span>Encriptar</button>
+            <button class="button--decrypt" type="button" id="button--decrypt"><span>></span>desencriptar</button>
 
         </div>
     </section>
@@ -36,12 +36,13 @@
                 </div>
             </div>
         
-            <div class="contenido_resuelto" id="resuelto">
-                <textarea name="texto_resultado" id="textoResultado" disabled></textarea>
-                <button id="copiar" type="button"><img src="./imagenes/copia.svg"> Copiar</button>
+            <div class="resolved" id="resolved">
+                <textarea class="response" name="response" id="response" disabled></textarea>
+                <button class="button--copy" id="copy" type="button">Copiar</button>
             </div>
         </div>
     </section>
 </section>
+<script src="js/script.js"></script>
 </body>
 </html>
