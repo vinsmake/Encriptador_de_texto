@@ -31,7 +31,7 @@ function decryptText (){
   .replaceAll("ober", "o")
   .replaceAll("ai", "a")
   .replaceAll("ufat", "u");
-
+// note: it's possible to use display: none;
   document.getElementById("nonResolved").style.visibility = "hidden"; //changes the visivility (using CSS visibility: hidden;)
   document.getElementById("copy").style.visibility = "visible"; //changes the visivility (using CSS visibility: visible;)
 
