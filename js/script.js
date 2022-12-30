@@ -7,8 +7,8 @@ const copy = document.getElementById("copy"); //copy button
 //-----FUNCTION THAT ECRYPTS TEXT-----
 function encryptText (){ 
   let writtenText = written.value.toLowerCase(); //gets the text in the text area and converts it to lower case
-  let encryptedText = writtenText //converts the writtenText to a variable encrypted
-  .replaceAll("e", "enter") //replaces all letters with text
+  writtenText = writtenText //replaces all letters with text
+  .replaceAll("e", "enter")
   .replaceAll("i", "imes")
   .replaceAll("o", "ober")
   .replaceAll("a", "ai")
@@ -25,7 +25,7 @@ function encryptText (){
     document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
   }
 
-  response.value = encryptedText; //the text in response is now an encrypted text
+  response.value = writtenText; //the text in response is now an encrypted text
   document.getElementById("text").value = ''; //deletes all the text in the written text area
 
 }
@@ -33,15 +33,15 @@ function encryptText (){
 
 //-----FUNCTION THAT DECRYPTS TEXT-----
 function decryptText (){
-  let encryptedText = written.value.toLowerCase(); //gets the text in the text area and converts it to lower case
-  let writtenText = encryptedText //converts the writtenText to a variable decrypted
-  .replaceAll("enter", "e") //replaces all letters with text
+  let writtenText = written.value.toLowerCase(); //gets the text in the text area and converts it to lower case
+  writtenText = writtenText //replaces all letters with text
+  .replaceAll("enter", "e")
   .replaceAll("imes", "i")
   .replaceAll("ober", "o")
   .replaceAll("ai", "a")
   .replaceAll("ufat", "u");
 
-  if(encryptedText == '') { /* To work only if there's a text in textarea, else, show duck message */
+  if(writtenText == '') { /* To work only if there's a text in textarea, else, show duck message */
   /* It's necessary to display:none right__response and copy because if not, the grid looks ulgy after encrypt or decrypt someting and use the button without text*/
     document.getElementById("right__instructions").style.display = "block"; //changes the visivility (using CSS display: none;)
     document.getElementById("right__response").style.display = "none"; //changes the visivility (using CSS display: none;)
