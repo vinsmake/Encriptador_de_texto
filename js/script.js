@@ -14,14 +14,17 @@ function encryptText (){
   .replaceAll("a", "ai")
   .replaceAll("u", "ufat");
 
-  document.getElementById("nonResolved").style.visibility = "hidden"; //changes the visivility (using CSS visibility: hidden;)
-  document.getElementById("copy").style.visibility = "visible"; //changes the visivility (using CSS visibility: visible;)
+  document.getElementById("right__instructions").style.display = "none"; //changes the visivility (using CSS display: none;)
+  document.getElementById("right__response").style.display = "block"; //changes the visivility (using CSS display: block;)
+  document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
+
 
   response.value = encryptedText; //the text in response is now an encrypted text
-  console.log(encryptedText);
   document.getElementById("text").value = ''; //deletes all the text in the written text area
 
 }
+
+
 //-----FUNCTION THAT DECRYPTS TEXT-----
 function decryptText (){
   let encryptedText = written.value.toLowerCase(); //gets the text in the text area and converts it to lower case
@@ -32,8 +35,8 @@ function decryptText (){
   .replaceAll("ai", "a")
   .replaceAll("ufat", "u");
 // note: it's possible to use display: none;
-  document.getElementById("nonResolved").style.visibility = "hidden"; //changes the visivility (using CSS visibility: hidden;)
-  document.getElementById("copy").style.visibility = "visible"; //changes the visivility (using CSS visibility: visible;)
+  document.getElementById("right__instructions").style.display = "none"; //changes the visivility (using CSS display: none;)
+  document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
 
   response.value = writtenText; //the text in response is now an decrypted text
 
