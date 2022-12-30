@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
+    <title>Encriptador de texto</title>
 </head>
-<header>
-    <h1 class="title"><img class="alura" src="src/alura.svg">Encriptador de texto <span>[1.0.0]</span></h1>
-</header>
-<body>
-<section class="flex">
-    <section class="user"> <!-- Left -->
-        <p class="instructions"><span>></span> Escribe el texto que quieres encriptar o desencriptar</p>
-        <textarea class="text" autofocus name="text" id="text"
-            placeholder="juro solemnemente que mis intenciones no son buenas"></textarea>
-        <p class="warning"><img class="warning" src="src/excalamation.svg"> Solo letras minúsculas y sin acentos</p>
-        <div class="buttons">
-            <button class="button--encrypt" type="button" id="button--encrypt"><span>></span>Encriptar</button>
-            <button class="button--decrypt" type="button" id="button--decrypt"><span>></span>desencriptar</button>
+<body class="body">
+<!--     START HEADER -->
+    <header class="header">
+        <h1 class="header__title">
+            <span class="header__title--icon">a</span>
+                Encriptador de texto
+            <span class="header__title--version"> [2.0.0]</span>
+        </h1>
+    </header>
+<!-- END HEADER -->
 
-        </div>
-    </section>
-    <section class="encripted"> <!-- Right -->
-        <div class="encripted__containter">
-            <div class="non__resolved" id="nonResolved">
-                <div class="non__resolved--image">
-                    <img class="non__resolved--image--src" src="src/duck.png" alt="">
+    <main>
+        <!-- START GRID -->
+        <section class="main--grid">
+            <!-- START LEFT -->
+            <article class="left">
+                <h2 class="left__instructions"><span class="left__instructions--span">></span> Escribe el texto que quieres
+                    encriptar o desencriptar</h2>
+                <textarea class="left__textarea" autofocus name="text" id="text"
+                    placeholder="juro solemnemente que mis intenciones no son buenas"></textarea>
+                <p class="left__warning"><img src="src/excalamation.svg"> Solo letras minúsculas y sin acentos</p>
+                <div class="left__buttons">
+                    <button class="left__buttons--encrypt" type="button" id="button--encrypt"><span
+                            class="left__buttons--encrypt--span">> </span>Encriptar</button>
+                    <button class="left__buttons--decrypt" type="button" id="button--decrypt"><span
+                            class="left__buttons--decrypt--span">> </span>desencriptar</button>
                 </div>
-                <div class="encripted__info">
-                <p class="non__resolved--title"><span>>ERROR:</span> Ningún mensaje fue encontrado</p>
-                <p class="non__resolved--message"><span>>USER:</span> Ingresa el texto que desees encriptar o desencriptar.</p>
+            </article>
+            <!-- END LEFT -->
+            <!-- START RIGHT -->
+            <article class="right">
+                <div class="right--container">
+                    <div class="right__instructions" id="right__instructions">
+                        <div class="right__instructions__image--container">
+                            <img class="right__instructions__image--src" src="src/duck.png">
+                        </div>
+                        <div class="right__instructions__messages">
+                            <div class="right__instructions__messages--message">
+                            <p class="right__instructions__messages--message--error">>ERROR: </p>
+                            <p class="right__instructions__messages--message--instruction"> Ningun mensaje fue ingresado</p>
+                            </div>
+                            <div class="right__instructions__messages--message">
+                            <p class="right__instructions__messages--message--user">>USER:  </p>
+                            <p class="right__instructions__messages--message--instruction"> Ingrese el texto que desee encriptar o desencriptar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right__response" id="right__response">
+                        <textarea class="right__response--response" name="response" id="response" disabled></textarea>
+                        <button class="right__response--copy" id="copy" type="button">> Copiar</button>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="resolved" id="resolved">
-                <textarea class="response" name="response" id="response" disabled></textarea>
-                <button class="button--copy" id="copy" type="button">Copiar</button>
-            </div>
-        </div>
+            </article>
     </section>
-</section>
-<script src="js/script.js"></script>
+<!-- END GRID -->
+    </main>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

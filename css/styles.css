@@ -1,249 +1,224 @@
 :root {
     --console--color: #12C258;
     --consolebackground--color: #0e6b0e;
-    --comand--color: #E37BD9;
+    --command--color: #E37BD9;
     --error--color: #DA2700;
     --background--color: #201F1E;
     --text--color: #EFEFEF;
     --message--color: #518BFC;
 }
-
-@font-face {
-    font-family: titles;
-    src: url(fonts/nintendo-ds-bios.ttf);
-}
+/* START - FONTS */
 @font-face {
     font-family: primary;
     src: url(fonts/advanced-pixel-7.ttf);
 }
-body {
-    color: var(--text--color);
+/* END - FONTS */
+/* START - Responsive font size with REM */
+html {
+    font-size: 100%;
     background-color: var(--background--color);
+    box-sizing: border-box;
     font-family: primary;
-}
-.title {
-    font-family: primary;
-    font-size: 4rem;
-    color: var(--console--color);
-    text-align: center;
 }
 
-.title span {
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@media (max-width: 920px) {
+    html {
+        font-size: 75%;
+        }
+}
+
+@media (max-width: 480px) {
+    html {
+    font-size: 62.5%;
+    }
+}
+/* END - Responsive font size with REM */
+
+.body {
+    width: 90%;
+    margin: auto;
+}
+
+.header__title {
+    font-size: 6rem;
+    color: var(--consolebackground--color);
+}
+
+.header__title--icon {
+    font-size: 10rem;
+    color: var(--console--color);
+}
+
+.header__title--version {
+    font-size: 4rem;
     color: var(--error--color);
 }
-/*  body */
-.flex {
-    width: 100%;
-    margin: 0 ;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6%;
+
+/* START - GRID */
+
+.main--grid{
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    gap: 1rem;
+    font-size: 3rem;
 
 }
 
-.user {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 60%;
-    margin: 1rem;
-    justify-content: center;
+@media (max-width: 920px) {
+    .main--grid{
+        grid: 1fr / 1fr;
+    }
 }
-/* [1]flex-grow Property / [1]flex-shrink Property / [60%]flex-basis Property
-[1] Crecera 1 graccion de su tamaño [1] se encojera 1 fraccieon de su tamaño / [60%]Longitud inicial del item flexible*/
 
-.instructions {
-    color: #518BFC;
-    font-size: 2rem;
+/* START - LEFT */
+
+.left__instructions {
+    color: var(--message--color);
+    font-size: 3rem;
 }
-.instructions span {
-    color: var(--comand--color);
-    font-size: 2rem;
+
+.left__instructions--span {
+    color: var(--console--color);
+    font-size: 3rem;
+
 }
-.text {
+
+.left__textarea {
     border: none;
     resize: none;
     outline: none;
     overflow: auto;
-/*     border: 1px solid var(--console--color); */
+    border: 1px solid var(--console--color);
     color: var(--console--color);
     background-color: transparent;
     caret-color: var(--console--color);
     padding: 1rem;
-    font-size: 2rem;
+    width: 100%;
+    height: 20rem;
+
 }
 
-.warning {
-    color: var(--comand--color);
+.left__warning {
+    color: var(--command--color);
     font-size: 2rem;
+    margin: 0;
 }
 
-
-
-/* botones */
-.buttons {
+.left__buttons {
     width: 100%;
     display: grid;
     grid: 1fr / 1fr 1fr;
     place-items: center;
-    padding: 1rem;
-    margin: auto;
+    margin: 1rem auto;
 }
-.button--encrypt,
-.button--decrypt {
+
+.left__buttons--encrypt,
+.left__buttons--decrypt {
     width: 80%;
-    padding: 0rem;
     font-size: 2rem;
     border: 2px inset black;
     color: var(--text--color);
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    place-items: center;
 }
 
 @media (max-width: 480px) {
-    .button--encrypt,
-    .button--decrypt {
+    .left__buttons--encrypt,
+    .left__buttons--decrypt {
     width: 90%;
     grid-template-columns: 20% 80%;
 }
 }
 
-.button--encrypt {
+.left__buttons--encrypt {
     background-color: var(--consolebackground--color);
 }
-.button--encrypt span{
+.left__buttons--encrypt--span{
     color: var(--error--color);
 }
 
-.button--decrypt {
+.left__buttons--decrypt {
     background-color: var(--error--color)
 }
 
-.button--decrypt span{
+.left__buttons--decrypt--span{
     color: var(--console--color);
 }
-
-.button--encrypt span,
-.button--decrypt span {
-    font-size: 4rem;
-    margin: 0 0 0 100%;
-}
-
-/* Nonresolved */
-.encripted {
-    flex: 1 1 30%;
-    margin: auto;
-    padding: 1rem;
-}
-
-.encripted__containter {
-    background-color: var(--consolebackground--color);
-    padding: 1rem;
-    height: auto;
-    border-radius: 8px;
-    font-size: 2rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.non__resolved {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 3rem 0;
-}
-
-.non__resolved--image {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.non__resolved--image--src{
+/* END - LEFT */
+/* START - RIGHT */
+.right--container {
+    background-color: #0e6b0e;
     width: 100%;
-    margin: auto;
-}
-
-.encripted__info {
-
-}
-
-
-.non__resolved--title,
-.non__resolved--message {
-    margin: 0;
-    font-size: 3rem;
-    display: grid;
-    grid: 1fr / 25% 75%;
-}
-.non__resolved--title {
-    color: var(--console--color);
-}
-
-.non__resolved--message {
-    color: var(--console--color);
-}
-
-.non__resolved--title span{
-    color: var(--error--color);
-    text-align: left;
-    font-size: 3rem;
-}
-
-.non__resolved--message span{
-    color: var(--comand--color);
-    text-align: left;
-    font-size: 3rem;
-}
-
-@media (max-width: 480px) {
-.non__resolved--title,
-.non__resolved--message,
-.non__resolved--title span,
-.non__resolved--message span{
-    font-size: 2rem;
-}
-}
-
-.button--copy {
-    visibility: hidden;
-    width: 80%;
-    padding: 0rem;
-    font-size: 2rem;
-    border: 2px inset black;
-    color: var(--text--color);
-    background-color: var(--message--color);
-    display: grid;
-    place-items: center;
-}
-
-.resolved {
-    position: absolute;
-    left: 0;
-    top: 0;
     height: 100%;
-    width: 100%;
-    margin: auto;
-    display: grid;
-    place-items: center;
-    grid: 85% 15% / 1fr;
+    border: 2px solid var(--console--color);
 }
 
-.response {
-    height: 85%;
-    width: 90%;
+.right__instructions {
+    display: block; /* TO BE DELETED IN JAVASCRIPT */
+}
+
+.right__instructions__image--container {
+    width: 20rem;
+    margin: auto;
+}
+
+.right__instructions__image--src {
+    width: 100%;
+    margin: auto;
+}
+
+.right__instructions__messages {
+    margin: 0 1rem;
+}
+.right__instructions__messages--message {
+    display: flex;
+    gap: 2rem;
+    font-size: 4rem;
+    color: var(--console--color);
+}
+
+.right__instructions__messages--message--error {
+    color: var(--error--color);
+    width: 8rem;
+}
+
+.right__instructions__messages--message--user {
+    color: var(--command--color);
+    width: 8rem;
+}
+
+.right__instructions__messages--message--error,
+.right__instructions__messages--message--user,
+.right__instructions__messages--message--instruction {
+    margin: 0;
+}
+
+.right__response {
+    display: none; /* TO BE DELETED IN JAVASCRIPT */
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.right__response--response {
+    width: 100%;
+    height: 80%;
     margin: auto;
     resize: none;
     border: none;
-    color: var(--text--color);
+    color: var(--console--color);
     background-color: transparent;
     text-align: left;
 }
 
-
-/* 
-Para el texto:
-https://css-tricks.com/almanac/properties/c/caret-shape/ 
-*/
+.right__response--copy {
+    width: 40%;
+    font-size: 2rem;
+    margin: 1rem auto;
+    border: 2px inset black;
+    color: var(--text--color);
+    background-color: var(--message--color);
+    display: block;
+}
