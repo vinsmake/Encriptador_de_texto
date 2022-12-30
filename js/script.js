@@ -14,10 +14,16 @@ function encryptText (){
   .replaceAll("a", "ai")
   .replaceAll("u", "ufat");
 
-  document.getElementById("right__instructions").style.display = "none"; //changes the visivility (using CSS display: none;)
-  document.getElementById("right__response").style.display = "block"; //changes the visivility (using CSS display: block;)
-  document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
-
+  if (writtenText == '') { /* To work only if there's a text in textarea, else, show duck message */
+  /* It's necessary to display:none right__response and copy because if not, the grid looks ulgy after encrypt or decrypt someting and use the button without text*/
+    document.getElementById("right__instructions").style.display = "block"; //changes the visivility (using CSS display: none;)
+    document.getElementById("right__response").style.display = "none"; //changes the visivility (using CSS display: none;)
+    document.getElementById("copy").style.display = "none"; //changes the visivility (using CSS display: none;)
+  } else {
+    document.getElementById("right__instructions").style.display = "none"; //changes the visivility (using CSS display: none;)
+    document.getElementById("right__response").style.display = "block"; //changes the visivility (using CSS display: block;)
+    document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
+  }
 
   response.value = encryptedText; //the text in response is now an encrypted text
   document.getElementById("text").value = ''; //deletes all the text in the written text area
@@ -34,9 +40,19 @@ function decryptText (){
   .replaceAll("ober", "o")
   .replaceAll("ai", "a")
   .replaceAll("ufat", "u");
-// note: it's possible to use display: none;
-  document.getElementById("right__instructions").style.display = "none"; //changes the visivility (using CSS display: none;)
-  document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
+
+  if(encryptedText == '') { /* To work only if there's a text in textarea, else, show duck message */
+  /* It's necessary to display:none right__response and copy because if not, the grid looks ulgy after encrypt or decrypt someting and use the button without text*/
+    document.getElementById("right__instructions").style.display = "block"; //changes the visivility (using CSS display: none;)
+    document.getElementById("right__response").style.display = "none"; //changes the visivility (using CSS display: none;)
+    document.getElementById("copy").style.display = "none"; //changes the visivility (using CSS display: none;)
+  } else {
+    /* It's necessary to display:none right__response and copy because if not, the grid looks ulgy after encrypt or decrypt someting and use the button without text*/
+    document.getElementById("right__instructions").style.display = "none"; //changes the visivility (using CSS display: none;)
+    document.getElementById("copy").style.display = "block"; //changes the visivility (using CSS display: block;)
+    document.getElementById("right__response").style.display = "block"; //changes the visivility (using CSS display: block;)
+  }
+
 
   response.value = writtenText; //the text in response is now an decrypted text
 
@@ -44,13 +60,12 @@ function decryptText (){
 
 }
 //-----FUNCTION THAT COPIES TEXT-----
-function copyText () {
-  let encryptedText = response.value;
-  navigator.clipboard.writeText(encryptedText);
+function copyText () { /* copy function */
+  let encryptedText = response.value; /* converts response.value, which is on the two functions, into encryptedText variable */
+  navigator.clipboard.writeText(encryptedText); /* adds the encryptedText variable to the clipboard */
 }
 
-encrypt.onclick = encryptText;
-decrypt.onclick = decryptText;
-
-copy.onclick = copyText;
+encrypt.onclick = encryptText; /* encrypt button */
+decrypt.onclick = decryptText;  /* decrypt button */
+copy.onclick = copyText; /* copy button */
 
